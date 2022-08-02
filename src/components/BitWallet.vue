@@ -21,15 +21,29 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
+
+button {
+  padding: 15px 90px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #41b883;
+  color: #fff;
+  border: 1px solid #41b883;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+button:hover {
+  border: 1px solid #2c3e50;
 }
 </style>
