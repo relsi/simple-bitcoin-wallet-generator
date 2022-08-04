@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: 'BitWallet',
   props: {
@@ -30,15 +32,20 @@ export default {
   },
   methods: {
     generateWallet() {
-      this.address = 'Wallet generated addres';
-      this.private_key = 'Wallet generated private key';
-      this.seed = 'Wallet generated seed';
+      //get wallet 
+      axios.get('http://localhost:3000/create-wallet', { mode: 'cors', 'Cache-Control': 'no-cache' })
+        .then(response => {
+          console.log(response.data.address)
+          this.address = response.data.address;
+          this.private_key = response.data.private_key;
+          this.seed = response.data.seed;
+        }
+        );
     }
   },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
